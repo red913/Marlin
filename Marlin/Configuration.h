@@ -742,7 +742,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 688 } //{ 80, 80, 400, 96.1 }OLD
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 689.6 } //{ 80, 80, 400, 96.1 }OLD
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -803,7 +803,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    5.0  // May be used by Linear Advance
+#define DEFAULT_EJERK    4.0  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -813,7 +813,7 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.028 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.012 // (mm) Distance from real junction edge
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
@@ -987,11 +987,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 38.2, 0, -4.5 } //{ -46, -18, -2.05 }old
+#define NOZZLE_TO_PROBE_OFFSET { 38.2, -17, -3.9 } //{ -46, -18, -2.05 }old
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 20
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED (10000)
